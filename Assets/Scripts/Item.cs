@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class teddyBear : MonoBehaviour {
+public class Item : MonoBehaviour {
+
+	public string name;
+	public string description;
 
 	// Use this for initialization
 	void Start () {
