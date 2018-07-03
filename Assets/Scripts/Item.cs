@@ -16,4 +16,8 @@ public class Item : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnMouseDown () {
+		Debug.Log("hello");
+	}
 }
