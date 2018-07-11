@@ -27,10 +27,20 @@ public class EventManager : MonoBehaviour {
             InventoryObject invObj = gameObject.GetComponent(typeof(InventoryObject)) as InventoryObject;
 
             if (invObj != null) { // Object is an inventory object
+
+                // Add object to inventory
+                player.PickUpItem(invObj);
+                Debug.Log("Player picked up object");
                 
             } else { // Object is an environment object
                 
+                EnvironmentObject envObj = gameObject.GetComponent(typeof(EnvironmentObject)) as EnvironmentObject;
+
             }
+
+        } else {
+
+
 
         }
 

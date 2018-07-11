@@ -501,8 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c30f8e121cfbef4dae0716e82992e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Wat
+  description: hi
   itemType: 0
 --- !u!1 &981300614
 GameObject:

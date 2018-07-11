@@ -17,4 +17,9 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	// Invoked when player picks up an item
+	public void PickUpItem(InventoryObject invObj) {
+		inventory.AddItem(invObj);
+	}
 }
