@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Camera movement stuff should be in here
 public class Player : MonoBehaviour {
 
+	// Player has inventory of items
 	public Inventory inventory;
-	public InventoryObject itemHeld;
+
+	// Player holding any item?
+	public bool isHoldingItem;
+	public InteractableObject itemHeld;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		inventory = new Inventory();
-		itemHeld = null;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		isHoldingItem = false;
 	}
 
 	// Invoked when player picks up an item
-	public void PickUpItem(InventoryObject invObj) {
-		inventory.AddItem(invObj);
+	public void PickUpItem(InteractableObject obj) {
+		inventory.AddItem(obj);
 	}
 }

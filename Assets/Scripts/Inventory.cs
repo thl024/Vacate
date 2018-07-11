@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Inventory {
 
-	public List<InventoryObject> items = new List<InventoryObject>();
+	public List<InteractableObject> items = new List<InteractableObject>();
 
-	public void AddItem(InventoryObject item) {
-		items.Add(item);
+	public void AddItem(InteractableObject item) {
+		if (item.canPickUp) {
+			items.Add(item);
+		} else {
+			// Throw exception
+		}
 	}
 
-	public bool HasItem(InventoryObject item) {
+	public bool HasItem(InteractableObject item) {
 		return items.Contains(item);
 	}
 
-	public bool RemoveItem(InventoryObject item) {
+	public bool RemoveItem(InteractableObject item) {
 		return items.Remove(item);
 	}
 }

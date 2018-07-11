@@ -2,20 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickManager : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
-    // Linked via Unity already -- no need to initialize in Start
-    public EventManager eventManager;
+	// Camera pos
+	public Transform Target;
 
-    // Initialization
-    void Start () {
-        
-    }
-    
-    // Update is called once per frame
-    void Update () {
+	// Singleton; keep a single global instance of the Game Manager
+	public static GameManager instance = null;
 
-        // Check for mouse click
+	// Event Manager 
+	public EventManager eventManager;
+
+	// Use this for initialization
+	void Awake () {
+
+		// Singleton instantiation
+		if (instance == null) {
+			instance = this;
+		} else if (instance != this) {
+			Destroy(gameObject);
+		}
+
+		// Ensures that the game manager does not get destroyed across scenes
+		DontDestroyOnLoad(gameObject);
+
+		// Initialization of event manager
+		eventManager = new EventManager();
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+		if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CamMovement(Target);
+        }
+
+		// Check for mouse click
         if (Input.GetMouseButtonDown(0)) {
             
             Debug.Log("Mouse clicked");
@@ -40,7 +64,10 @@ public class ClickManager : MonoBehaviour {
             }
 
         }
+	}
 
-        
+	void CamMovement(Transform inTarget)
+    {
+        transform.position = inTarget.position;
     }
 }
