@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class Inventory {
 
-	public List<ItemType> items = new List<ItemType>();
+	public List<InventoryObjectType> items = new List<InventoryObjectType>();
 
-	public ItemType itemHeld;
+	public InventoryObjectType itemHeld;
 
-	public void AddItem(ItemType itemType) {
+	public void AddItem(InventoryObjectType itemType) {
 		// TODO
 	}
 
-	public void hasItem(ItemType itemType) {
+	public void hasItem(InventoryObjectType itemType) {
 		// TODO
 	}
 }
-
-public enum ItemType { 
-	DrawerKey, 
-	TrunkKey, 
-	Compass, 
-	TeddyBear, 
-	USB, 
-	Scissors, 
-	KeyCard, 
-	Screwdriver 
-};

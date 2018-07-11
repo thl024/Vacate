@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
+public class InventoryObject : MonoBehaviour {
 
     public string name;
     public string description;
-    public ItemType itemType;
+    public InventoryObjectType itemType;
 
     // Use this for initialization
     void Start () {

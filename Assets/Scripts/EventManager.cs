@@ -25,3 +25,29 @@ public class EventManager : MonoBehaviour {
         // etc.
     }
 }
+
+public enum InventoryObjectType { 
+    DrawerKey, 
+    TrunkKey, 
+    Compass, 
+    TeddyBear, 
+    USB, 
+    Scissors, 
+    KeyCard, 
+    Screwdriver 
+};
+
+public enum EnvironmentObjectType {
+    Bed,
+    Vent,
+    DeskDrawer,
+    Computer,
+    DeskDrawer1,
+    DeskDrawer2,
+    DeskDrawer3,
+    Trunk,
+    ExitDoor,
+    Nightstand,
+    Plant,
+    Candle
+}
