@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		inventory = new Inventory();
-		itemHeld = null
+		itemHeld = null;
 	}
 	
 	// Update is called once per frame

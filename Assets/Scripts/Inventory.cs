@@ -7,10 +7,14 @@ public class Inventory {
 	public List<InventoryObject> items = new List<InventoryObject>();
 
 	public void AddItem(InventoryObject item) {
-		// TODO
+		items.Add(item);
 	}
 
-	public void hasItem(InventoryObject item) {
-		// TODO
+	public bool HasItem(InventoryObject item) {
+		return items.Contains(item);
+	}
+
+	public bool RemoveItem(InventoryObject item) {
+		return items.Remove(item);
 	}
 }

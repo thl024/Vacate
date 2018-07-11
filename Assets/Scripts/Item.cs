@@ -18,8 +18,14 @@ public class InventoryObject : MonoBehaviour {
         
     }
 
-    // Currently does nothing - clicks handled through click manager
-    void OnMouseDown () {
-        
+    // Override == so that inventory objects with the same object type are the same 
+    public static bool operator == (InventoryObject obj1, InventoryObject obj2)
+    {
+        return obj1.itemType == obj2.itemType;
+    }
+
+    public static bool operator != (InventoryObject obj1, InventoryObject obj2)
+    {
+        return obj1.itemType != obj2.itemType;
     }
 }
