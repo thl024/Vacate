@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public struct InteractableObject {
-	// Unique object ID
-	public int ID;
+	// Object Type
+    public ObjectType type;
 
 	// Object Name
 	public string name;
-
-	// Object Type
-	public ObjectType type;
 
 	// Linked gameobject
 	public GameObject gameObject;
@@ -20,6 +17,9 @@ public struct InteractableObject {
 
 	// Pickupable or not
 	public bool canPickUp;
+
+    // How many am I holding?
+    public int count;
 }
 
 public enum ObjectType { 

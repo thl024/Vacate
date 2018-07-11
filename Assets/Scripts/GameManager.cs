@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	// Camera pos
-	public Transform Target;
-
 	// Singleton; keep a single global instance of the Game Manager
 	public static GameManager instance = null;
 
@@ -34,11 +31,6 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CamMovement(Target);
-        }
-
 		// Check for mouse click
         if (Input.GetMouseButtonDown(0)) {
             
@@ -65,9 +57,4 @@ public class GameManager : MonoBehaviour {
 
         }
 	}
-
-	void CamMovement(Transform inTarget)
-    {
-        transform.position = inTarget.position;
-    }
 }

@@ -8,7 +8,7 @@ public class ItemDatabase  {
 	public static ItemDatabase instance = null;
 
 	// Keep a map from a unique ID to the interactable object
-	Dictionary<int, InteractableObject> itemMap;
+	public Dictionary<int, InteractableObject> itemMap;
 
 	public ItemDatabase() {
 		// Singleton instantiation
