@@ -5,9 +5,6 @@ using UnityEngine;
 // Currently does not need to inherit MonoBehavior but could be useful later
 public class EventManager : MonoBehaviour {
 
-    // Currently held item
-    public GameObject itemHeld;
-
     // Use this for initialization
     void Start () {
         

@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+public class Inventory {
 
-	public List<Item> items;
+	public List<ItemType> items = new List<ItemType>();
 
-	// Use this for initialization
-	void Start () {
-		items = new List<Item>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public ItemType itemHeld;
 
-	public void AddItem() {
+	public void AddItem(ItemType itemType) {
 		// TODO
 	}
 
-	public void hasItem() {
+	public void hasItem(ItemType itemType) {
 		// TODO
 	}
 }
+
+public enum ItemType { 
+	DrawerKey, 
+	TrunkKey, 
+	Compass, 
+	TeddyBear, 
+	USB, 
+	Scissors, 
+	KeyCard, 
+	Screwdriver 
+};
