@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryObject : MonoBehaviour {
+public class InventoryObject : InteractableObject {
 
-    public string name;
-    public string description;
     public InventoryObjectType itemType;
 
     // Use this for initialization

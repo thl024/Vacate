@@ -5,6 +5,8 @@ using UnityEngine;
 // Currently does not need to inherit MonoBehavior but could be useful later
 public class EventManager : MonoBehaviour {
 
+    public Player player;
+
     // Use this for initialization
     void Start () {
         
@@ -19,6 +21,18 @@ public class EventManager : MonoBehaviour {
     public void PerformEvent(GameObject gameObject) {
         Debug.Log("Event Manager Logic");
         // TODO -- lots of logic goes here
+
+        if (player.itemHeld == null) {
+
+            InventoryObject invObj = gameObject.GetComponent(typeof(InventoryObject)) as InventoryObject;
+
+            if (invObj != null) { // Object is an inventory object
+                
+            } else { // Object is an environment object
+                
+            }
+
+        }
 
         // User holding item or not?
         // Interacted object pickupable or not?
