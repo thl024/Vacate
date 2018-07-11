@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Inventory {
 
-	public List<InventoryObjectType> items = new List<InventoryObjectType>();
+	public List<InventoryObject> items = new List<InventoryObject>();
 
-	public InventoryObjectType itemHeld;
-
-	public void AddItem(InventoryObjectType itemType) {
+	public void AddItem(InventoryObject item) {
 		// TODO
 	}
 
-	public void hasItem(InventoryObjectType itemType) {
+	public void hasItem(InventoryObject item) {
 		// TODO
 	}
 }
