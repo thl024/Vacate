@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour {
             CamMovement(Target);
         }
     }
-    void CamMovement(Transform inTarget)
+    public void CamMovement(Transform inTarget)
     {
         transform.position = inTarget.position;
     }
