@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Camera movement stuff should be in here
-public class Player : MonoBehaviour {
+public class Player {
 
 	// Player has inventory of items
 	public Inventory inventory;
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	public InteractableObject itemHeld;
 
 	// Use this for initialization
-	void Awake () {
+	public Player() {
 		inventory = new Inventory();
 		isHoldingItem = false;
 	}
@@ -21,5 +21,9 @@ public class Player : MonoBehaviour {
 	// Invoked when player picks up an item
 	public void PickUpItem(InteractableObject obj) {
 		inventory.AddItem(obj);
+	}
+
+	public bool HasItem(InteractableObject obj) {
+		return inventory.HasItem(obj);
 	}
 }

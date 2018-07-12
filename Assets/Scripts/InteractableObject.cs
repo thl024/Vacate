@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct InteractableObject {
+public class InteractableObject : MonoBehaviour {
+
 	// Object Type
     public ObjectType type;
-
-	// Object Name
-	public string name;
-
-	// Linked gameobject
-	public GameObject gameObject;
 
 	// Object Description
 	public string description;
@@ -18,8 +13,11 @@ public struct InteractableObject {
 	// Pickupable or not
 	public bool canPickUp;
 
-    // How many am I holding?
+    // How many of this item is there
     public int count;
+
+    // No functionalities for now...
+
 }
 
 public enum ObjectType { 

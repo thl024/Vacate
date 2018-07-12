@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// May need to inherit from script or something to render items updates on UI
 public class Inventory {
 
 	public List<InteractableObject> items = new List<InteractableObject>();
@@ -15,9 +16,18 @@ public class Inventory {
 	}
 
 	public bool HasItem(InteractableObject item) {
-		return items.Contains(item);
+
+		// Potential TODO: override == in InteractableObject
+		foreach (InteractableObject invItem in items) {
+			if (invItem.type == item.type) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
+	// TODO rework
 	public bool RemoveItem(InteractableObject item) {
 		return items.Remove(item);
 	}

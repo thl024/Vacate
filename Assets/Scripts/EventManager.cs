@@ -9,20 +9,40 @@ public class EventManager {
 
     public EventManager() {
         // Keeps track of the player
-
-
-        // Instantiate ItemDB
-        ItemDatabase.instance = new ItemDatabase();
+        player = new Player();
     }
 
     // Determines the event upon gameobject selection
     public void PerformEvent(GameObject gameObject) {
         Debug.Log("Event Manager Logic");
+
+        // Check if object is interactable
+        InteractableObject obj = gameObject.GetComponent(typeof(InteractableObject)) as InteractableObject;
+
+        if (obj != null) {
+
+            if (player.itemHeld == null) {
+
+                if (!player.HasItem(obj)) {
+
+                    player.PickUpItem(obj);
+
+                    // Make gameobject disappear from scene
+                    UnityEngine.Object.Destroy(gameObject);
+
+                }
+
+            }
+
+        } else {
+            Debug.Log("Non-interactable game object clicked.");
+        }
+
         // TODO -- lots of logic goes here
 
         // if (player.itemHeld == null) {
 
-        //     InventoryObject invObj = gameObject.GetComponent(typeof(InventoryObject)) as InventoryObject;
+        //     
 
         //     if (invObj != null) { // Object is an inventory object
 

@@ -14,9 +14,6 @@ public class SoundManager : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy(gameObject);
 		}
-
-		// Ensures that the sound manager does not get destroyed across scenes
-		DontDestroyOnLoad(gameObject);
 	}
 	
 	// Update is called once per frame

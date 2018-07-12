@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		// Ensures that the game manager does not get destroyed across scenes
-		DontDestroyOnLoad(gameObject);
-
 		// Initialization of event manager
 		eventManager = new EventManager();
 
