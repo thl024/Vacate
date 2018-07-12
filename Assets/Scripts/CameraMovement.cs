@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,10 +7,10 @@ public class CameraMovement : MonoBehaviour {
     public Transform Target;
 
 
-    // Use this for initialization
-    void Start () {
-        
-    }
+	// Use this for initialization
+	void Start () {
+		
+	}
 
     // Update is called once per frame
     void Update()
@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour {
             CamMovement(Target);
         }
     }
-    void CamMovement(Transform inTarget)
+    public void CamMovement(Transform inTarget)
     {
         transform.position = inTarget.position;
     }
