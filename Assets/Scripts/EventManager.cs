@@ -19,16 +19,35 @@ public class EventManager {
         // Check if object is interactable
         InteractableObject obj = gameObject.GetComponent(typeof(InteractableObject)) as InteractableObject;
 
-        if (obj != null) {
+        if (obj != null) { // Object is interactable
 
-            if (player.itemHeld == null) {
+            if (obj.canPickUp) { // Object is pickupable
 
-                if (!player.HasItem(obj)) {
+                if (!player.HasItem(obj)) { // Player does not have the item
 
+                    // Pick up the item and add to inventory
                     player.PickUpItem(obj);
 
                     // Make gameobject disappear from scene
                     UnityEngine.Object.Destroy(gameObject);
+
+                } else { // Player already has the item
+
+                    Debug.Log("Player already has an item of this type. Something went wrong!");
+
+                }
+
+            } else { // Cannot pick up object
+
+                // TODO - LOGIC BLOCK
+
+                if (player.itemHeld != null) { // Player is holding an item
+
+                    // TODO - LOGIC BLOCK
+
+                } else { // Player is not holding an item
+
+
 
                 }
 
@@ -37,33 +56,5 @@ public class EventManager {
         } else {
             Debug.Log("Non-interactable game object clicked.");
         }
-
-        // TODO -- lots of logic goes here
-
-        // if (player.itemHeld == null) {
-
-        //     
-
-        //     if (invObj != null) { // Object is an inventory object
-
-        //         // Add object to inventory
-        //         player.PickUpItem(invObj);
-        //         Debug.Log("Player picked up object");
-                
-        //     } else { // Object is an environment object
-                
-        //         EnvironmentObject envObj = gameObject.GetComponent(typeof(EnvironmentObject)) as EnvironmentObject;
-
-        //     }
-
-        // } else {
-
-
-
-        // }
-
-        // User holding item or not?
-        // Interacted object pickupable or not?
-        // etc.
     }
 }
