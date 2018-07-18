@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UIItemPopUp : MonoBehaviour {
     //takes care of all the UI stuff.  wow.
 
     public Canvas popUp;
     Image itemImage;
     Text description;
-    CameraMovement mainCam;
-
-    public Transform[] roomsList;
+    
 
     private void Awake()
     {
@@ -20,19 +18,8 @@ public class UIManager : MonoBehaviour {
         description = GameObject.Find("Item Description").GetComponent<Text>();
         popUp.gameObject.SetActive(false);
         Debug.Log(description);
-
-        mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void ItemInteracted(Text inDescription) //replace with OBJECT class and extract data
     {
@@ -52,8 +39,4 @@ public class UIManager : MonoBehaviour {
         popUp.gameObject.SetActive(false);
     }
 
-    public void RightButton()
-    {
-
-    }
 }
