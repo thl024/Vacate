@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour {
 
-	// Object Type
+    #region data
+    // Object Type
     public ObjectType type;
 
 	// Object Description
@@ -17,6 +18,24 @@ public class InteractableObject : MonoBehaviour {
     public int count;
 
     // No functionalities for now...
+#endregion
+
+
+    #region getters
+    ObjectType GetObjectType() { return type; }
+    string GetDescription() { return description; };
+
+
+
+
+    #endregion
+
+
+    #region functionality
+
+    
+
+#endregion region
 
 }
 

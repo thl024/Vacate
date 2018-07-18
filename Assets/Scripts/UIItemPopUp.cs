@@ -13,7 +13,6 @@ public class UIItemPopUp : MonoBehaviour {
 
     private void Awake()
     {
-       // popUp = GameObject.Find("ItemInteractPopUp 01").GetComponent<Canvas>();
         
         description = GameObject.Find("Item Description").GetComponent<Text>();
         popUp.gameObject.SetActive(false);

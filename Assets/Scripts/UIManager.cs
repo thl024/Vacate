@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour {
     private void Awake()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        Debug.Log(mainCam);
+        mainCam.CamMovement(roomsList[currentIndex]);
     }
 
 
