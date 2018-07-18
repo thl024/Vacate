@@ -802,7 +802,7 @@ Prefab:
     - target: {fileID: 224733620803638252, guid: 37e1c9a46b0d547498e6306d86f7907d,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.1000061
+      value: 0.099975586
       objectReference: {fileID: 0}
     - target: {fileID: 224733620803638252, guid: 37e1c9a46b0d547498e6306d86f7907d,
         type: 2}
@@ -1460,6 +1460,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1837734862}
     m_Modifications:
+    - target: {fileID: 114882432880175092, guid: 2789c58b92dcf1a4b84f3b6e5fc90c0f,
+        type: 2}
+      propertyPath: roomsList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 224469838894518582, guid: 2789c58b92dcf1a4b84f3b6e5fc90c0f,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1578,6 +1583,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ClosePopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 224157496294973310, guid: 2789c58b92dcf1a4b84f3b6e5fc90c0f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.800003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2789c58b92dcf1a4b84f3b6e5fc90c0f, type: 2}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIItemPopUp : MonoBehaviour {
+public class UIManager : MonoBehaviour {
     //takes care of all the UI stuff.  wow.
 
     public Canvas popUp;
@@ -21,7 +21,7 @@ public class UIItemPopUp : MonoBehaviour {
         popUp.gameObject.SetActive(false);
         Debug.Log(description);
 
-        mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>(); 
+        mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
     }
 
     // Use this for initialization

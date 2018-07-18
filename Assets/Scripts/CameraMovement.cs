@@ -15,11 +15,11 @@ public class CameraMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        /* set to spacebar for testing
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CamMovement(Target);
-        }
+        }*/
     }
     public void CamMovement(Transform inTarget)
     {
