@@ -27,4 +27,8 @@ public class Player {
 	public bool HasItem(InteractableObject obj) {
 		return inventory.HasItem(obj);
 	}
+
+	public bool RemoveItem(InteractableObject obj) {
+		return inventory.RemoveItem(obj);
+	}
 }
