@@ -23,7 +23,7 @@ public class InteractableObject : MonoBehaviour {
 
     #region getters
     ObjectType GetObjectType() { return type; }
-    string GetDescription() { return description; };
+    string GetDescription() { return description; }
 
 
 
@@ -35,7 +35,7 @@ public class InteractableObject : MonoBehaviour {
 
     
 
-#endregion region
+#endregion 
 
 }
 
