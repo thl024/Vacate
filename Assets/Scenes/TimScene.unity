@@ -1357,8 +1357,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1212774604}
+  - component: {fileID: 1212774605}
   m_Layer: 0
-  m_Name: UI
+  m_Name: InventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,6 +1379,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212774605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1212774603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c596cc50bfbe34a07b7793c6bfb1ed69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
 --- !u!1001 &1233815953
 Prefab:
   m_ObjectHideFlags: 0
@@ -1461,7 +1474,6 @@ MonoBehaviour:
   type: 9
   description: Vent Test
   canPickUp: 0
-  count: 1
   isOpen: 0
 --- !u!1001 &1541022407
 Prefab:
