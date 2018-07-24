@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // May need to inherit from script or something to render items updates on UI
-public class Inventory {
+public class Inventory : MonoBehaviour {
 
 	public List<InteractableObject> items = new List<InteractableObject>();
 
@@ -27,8 +27,26 @@ public class Inventory {
 		return false;
 	}
 
-	// TODO rework
 	public bool RemoveItem(InteractableObject item) {
-		return items.Remove(item);
+		var ind = -1;
+
+		for (var i = 0; i < items.Count; i++) {
+			if (items[i].type == item.type) {
+				ind = i;
+				break;
+			}
+		}
+
+		if (ind != -1) {
+			items.RemoveAt(ind);
+			return true;
+		}
+
+		return false;
 	}
+
+	// Draw on GUI?
+	void OnGUI() {
+    	// GUI.Label( new Rect(...), text );
+ 	}
 }
