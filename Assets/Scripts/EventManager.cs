@@ -51,40 +51,49 @@ public class EventManager {
 
                         Debug.Log("Vent Clicked");
 
-                        // TODO -- CHECK SOMEHOW IF THE VENT IS OPEN... MAYBE NEED TO MAKE A NEW SCRIPT OR MODIFY
-                        // EXISTING SCRIPT FOR INTERACTBLE ITEM TO CONTAIN SOME SORT OF GENERIC INDICATOR ACROSS ALL
-                        // OTHER OBJECT TYPES
+                        // Vent is an openable object and should have the the openable object script; if not TODO!! (throw error)
+                        OpenableObject openableObj = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
 
-                        if (true) { // TODO replace with vent open check
+                        if (!openableObj.isOpen) { // If vent is not open
 
                             if (player.itemHeld != null) { // Player is holding an item
 
                                 if (player.itemHeld.type == ObjectType.Screwdriver) {
 
-                                    // TODO
-                                    // Change vent sprite and vent open/close state by modifying current gameObject & script values
+                                    Debug.Log("Vent Opened");
+
+                                    // TODO!!
+                                    // Change vent sprite
+
+                                    // Open vent
+                                    openableObj.isOpen = true;
 
                                     // Remove screwdriver from player inventory
                                     player.RemoveItem(player.itemHeld);
 
                                 } else {
 
-                                    // Popup telling user that he or she is a dumbass using the wrong item
+                                    Debug.Log("Incorrect item used on vent");
+
+                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
 
                                 }
 
                             } else { // Player is not holding an item
 
-                                // Have popup telling user that it needs something to open or something
+                                Debug.Log("Vent clicked with no item");
+
+                                // TODO -- popup telling user that it needs something to open or something
 
                             }
 
-                        } else {
+                        } else { // Vent is open
+
+                            Debug.Log("Vent opened");
 
                             // If item is in the vent... it should be able to handle itself being clicked
-                            // If no item in the vent, nothing should happen... so in total:
 
-                            // DO NOTHING or prompt user saying the vent is empty 
+                            // DO NOTHING
 
                         }
 

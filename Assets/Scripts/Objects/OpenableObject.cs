@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class OpenableObject : InteractableObject {
 
-	public OpenableObjectState state;
+	public bool isOpen;
 
-}
-
-public enum OpenableObjectState {
-	Open,
-	Close
 }

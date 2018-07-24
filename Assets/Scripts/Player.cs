@@ -14,8 +14,9 @@ public class Player {
 
 	// Use this for initialization
 	public Player() {
-		GameObject invGO = GameObject.Find("Hand");
-		inventory = invGO.GetComponent<Inventory>();
+		// GameObject invGO = GameObject.Find("Hand");
+		// inventory = invGO.GetComponent<Inventory>();
+		inventory = new Inventory();
 		isHoldingItem = false;
 	}
 

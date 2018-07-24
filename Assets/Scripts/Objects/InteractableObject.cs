@@ -14,9 +14,6 @@ public class InteractableObject : MonoBehaviour {
 	// Pickupable or not
 	public bool canPickUp;
 
-    // How many of this item is there
-    public int count;
-
     // No functionalities for now...
 #endregion
 
