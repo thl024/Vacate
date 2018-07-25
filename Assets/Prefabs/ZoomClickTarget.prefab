@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114086081395584640}
   - component: {fileID: 61204736152487064}
   m_Layer: 0
-  m_Name: ZoomSpace
+  m_Name: ZoomClickTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5b3f6027e6546f3bd1b727891e648c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  camTarget: {fileID: 0}
 --- !u!212 &212935552085570472
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
+
+    #region Data
     CameraMovement mainCam;
+
+    public Button rightButton;
+    public Button leftButton;
+    public Button backButton;
 
     [SerializeField]
     int startingIndex = 1;
@@ -13,12 +19,18 @@ public class UIManager : MonoBehaviour {
 
     int currentIndex = 0;
 
+    #endregion
+
+    #region functionality
     private void Awake()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        mainCam.MoveCam(roomsList[startingIndex]);
+        currentIndex = startingIndex;
+        mainCam.MoveCam(roomsList[currentIndex]);
+        backButton.gameObject.SetActive(false);
     }
 
+        #region movementButtons
 
     public void RightButton()
     {
@@ -39,6 +51,33 @@ public class UIManager : MonoBehaviour {
         currentIndex -= 1;
         currentIndex = currentIndex % 4;
         mainCam.MoveCam(roomsList[currentIndex]);
-        Debug.Log(currentIndex);
+        
     }
+
+    public void SetButtonsActive()
+    {
+        rightButton.gameObject.SetActive(true);
+        leftButton.gameObject.SetActive(true);
+        backButton.gameObject.SetActive(false);
+    }
+
+    public void DeactivateButtons()
+    {
+        rightButton.gameObject.SetActive(false);
+        leftButton.gameObject.SetActive(false);
+        backButton.gameObject.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        mainCam.MoveCam(roomsList[currentIndex]);
+        Debug.Log(roomsList[currentIndex]);
+        SetButtonsActive();
+    }
+    #endregion
+
+        #region Inventory UI
+    //nothing yet lol
+    #endregion 
+    #endregion
 }

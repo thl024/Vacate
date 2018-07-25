@@ -38,6 +38,10 @@ public class EventManager {
             HelperFunctions.printTransform(space.camTarget.transform);
             mainCameraMover.MoveCam(space.camTarget.transform);
 
+            //adjust UI
+            UIManager uiManager = GameObject.Find("UI").GetComponent<UIManager>();
+            uiManager.DeactivateButtons();
+
             return;
         }
 
