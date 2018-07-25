@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
     CameraMovement mainCam;
 
+    [SerializeField]
+    int startingIndex = 1;
+
     public Transform[] roomsList = new Transform[4];
+
     int currentIndex = 0;
 
     private void Awake()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        mainCam.MoveCam(roomsList[currentIndex]);
+        mainCam.MoveCam(roomsList[startingIndex]);
     }
 
 

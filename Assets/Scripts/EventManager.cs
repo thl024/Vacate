@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EventManager {
+    #region Data 
+    //the big D
 
     // Keep track of the player 
     public Player player;
 
     public CameraMovement mainCameraMover;
+#endregion
+
 
     public EventManager() {
         // Keeps track of the player
@@ -29,7 +34,9 @@ public class EventManager {
             Debug.Log("Zoom space clicked");
 
             // Move main camera to the space
-            mainCameraMover.MoveCam(space.transform);
+
+            HelperFunctions.printTransform(space.camTarget.transform);
+            mainCameraMover.MoveCam(space.camTarget.transform);
 
             return;
         }

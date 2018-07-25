@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7731a7f09b6e864489fea23bbfead6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingIndex: 1
   roomsList:
   - {fileID: 1400251449}
   - {fileID: 1588199567}
@@ -1646,15 +1647,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4878916098448536, guid: 660cad61f287d4c3ba3ad6096af15b35, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.7
+      value: 2.57
       objectReference: {fileID: 0}
     - target: {fileID: 4878916098448536, guid: 660cad61f287d4c3ba3ad6096af15b35, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 4878916098448536, guid: 660cad61f287d4c3ba3ad6096af15b35, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4878916098448536, guid: 660cad61f287d4c3ba3ad6096af15b35, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1683,6 +1684,15 @@ Prefab:
     - target: {fileID: 114086081395584640, guid: 660cad61f287d4c3ba3ad6096af15b35,
         type: 2}
       propertyPath: target
+      value: 
+      objectReference: {fileID: 694049028}
+    - target: {fileID: 1405063843817434, guid: 660cad61f287d4c3ba3ad6096af15b35, type: 2}
+      propertyPath: m_Name
+      value: plant_ZoomSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 114086081395584640, guid: 660cad61f287d4c3ba3ad6096af15b35,
+        type: 2}
+      propertyPath: camTarget
       value: 
       objectReference: {fileID: 694049028}
     m_RemovedComponents: []
@@ -2847,6 +2857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19175593bbfe5c4595b2d3ea2b6d152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 694049028}
 --- !u!114 &1490675344
 MonoBehaviour:
   m_ObjectHideFlags: 0
