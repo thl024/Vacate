@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour {
     private void Awake()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        mainCam.CamMovement(roomsList[currentIndex]);
+        mainCam.MoveCam(roomsList[currentIndex]);
     }
 
 
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour {
     {
         currentIndex += 1;
         currentIndex = currentIndex % 4;
-        mainCam.CamMovement(roomsList[currentIndex]);
+        mainCam.MoveCam(roomsList[currentIndex]);
         Debug.Log(currentIndex);
         Debug.Log(roomsList[currentIndex]);
     }
@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour {
         }
         currentIndex -= 1;
         currentIndex = currentIndex % 4;
-        mainCam.CamMovement(roomsList[currentIndex]);
+        mainCam.MoveCam(roomsList[currentIndex]);
         Debug.Log(currentIndex);
     }
 }
