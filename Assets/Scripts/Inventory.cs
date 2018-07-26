@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Extension;
 
 // May need to inherit from script or something to render items updates on UI
 public class Inventory : MonoBehaviour {

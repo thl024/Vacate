@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Extension;
 
 // Camera movement stuff should be in here
 public class Player {
@@ -45,8 +44,9 @@ public class Player {
 		InteractableObject obj = inventory.GetItem(typeToEquip);
 
 		if (obj == null) {
-			Debug.Log("But what");
-			Debug.Log("Tpe " + obj.type);
+			Debug.Log("wtf");
+			Debug.Log("Object: " + obj);
+			Debug.Log("Type: " + obj.type);
 		}
 
 		// Object does not exist in the inventory
