@@ -43,14 +43,8 @@ public class Player {
 
 		InteractableObject obj = inventory.GetItem(typeToEquip);
 
-		if (obj == null) {
-			Debug.Log("wtf");
-			Debug.Log("Object: " + obj);
-			Debug.Log("Type: " + obj.type);
-		}
-
 		// Object does not exist in the inventory
-		if (obj == null) {
+		if (ReferenceEquals( obj, null )) {
 
 			Debug.Log("Error: " + typeToEquip + " could not be retrieved.");
 			return false;

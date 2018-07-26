@@ -54,8 +54,7 @@ public class GameManager : MonoBehaviour {
 
         } else if (Input.GetKeyDown(KeyCode.S)) {
 
-        	Debug.Log("Picking up screwdriver");
-
+        	// Perform equip/unequip action with screwdriver
         	eventManager.PerformEquip(ObjectType.Screwdriver);
 
         }

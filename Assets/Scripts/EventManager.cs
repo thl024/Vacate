@@ -24,6 +24,18 @@ public class EventManager {
 
     public void PerformEquip(ObjectType type) {
 
+        // Unequip item
+        if (!ReferenceEquals( player.itemHeld, null )) {
+
+            ObjectType currentItemType = player.itemHeld.type;
+            Debug.Log("Unequipping: " + currentItemType);
+            player.UnequipInventoryItem();
+
+            // If the item selected was the one equipped, simply unequip
+            if (currentItemType == type) return;
+
+        }
+
         bool result = player.EquipInventoryItem(type);
 
         if (!result) {
@@ -97,7 +109,7 @@ public class EventManager {
 
                         if (!openableObj.isOpen) { // If vent is not open
 
-                            if (player.itemHeld != null) { // Player is holding an item
+                            if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
 
                                 if (player.itemHeld.type == ObjectType.Screwdriver) {
 
