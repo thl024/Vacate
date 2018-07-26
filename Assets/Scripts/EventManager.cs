@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Extension;
 
 
 public class EventManager {
@@ -11,8 +12,8 @@ public class EventManager {
     public Player player;
 
     public CameraMovement mainCameraMover;
-#endregion
-
+    
+    #endregion
 
     public EventManager() {
         // Keeps track of the player
@@ -22,12 +23,24 @@ public class EventManager {
         mainCameraMover = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
     }
 
+    public void PerformEquip(ObjectType type) {
+
+        bool result = player.EquipInventoryItem(type);
+
+        if (!result) {
+            Debug.Log("Could not equip player with " + type);
+            return;
+        }
+
+        Debug.Log("Equipped player with " + type);
+
+    }
+
     // Determines the event upon gameobject selection
     public void PerformEvent(GameObject gameObject) {
         Debug.Log("Event Manager Logic");
 
         // Check if object is a zoomable space
-        // TODO
         ZoomSpace space = gameObject.GetComponent(typeof(ZoomSpace)) as ZoomSpace;
         if (space != null) {
 

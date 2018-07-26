@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour {
 	public bool canPickUp;
 
     // No functionalities for now...
-#endregion
+    #endregion
 
 
     #region getters
@@ -37,7 +37,7 @@ public class InteractableObject : MonoBehaviour {
 }
 
 public enum ObjectType { 
-    DrawerKey, 
+    DrawerKey,
     TrunkKey, 
     Compass, 
     TeddyBear, 

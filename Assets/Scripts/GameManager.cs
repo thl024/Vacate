@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("Empty click");
             }
 
+        } else if (Input.GetKeyDown(KeyCode.S)) {
+
+        	Debug.Log("Picking up screwdriver");
+
+        	eventManager.PerformEquip(ObjectType.Screwdriver);
+
         }
 	}
 }

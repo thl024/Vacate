@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Extension;
 
 // May need to inherit from script or something to render items updates on UI
 public class Inventory : MonoBehaviour {
@@ -8,11 +9,7 @@ public class Inventory : MonoBehaviour {
 	public List<InteractableObject> items = new List<InteractableObject>();
 
 	public void AddItem(InteractableObject item) {
-		if (item.canPickUp) {
-			items.Add(item);
-		} else {
-			// Throw exception
-		}
+		items.Add(item);
 	}
 
 	public bool HasItem(InteractableObject item) {
@@ -42,7 +39,24 @@ public class Inventory : MonoBehaviour {
 			return true;
 		}
 
+		Debug.Log("ERROR: Item " + item.type + " not in inventory!");
 		return false;
+	}
+
+	public InteractableObject GetItem(ObjectType type) {
+
+		foreach (InteractableObject invItem in items) {
+
+			if (invItem.type == type) {
+				return invItem;
+			}
+			
+		}
+
+		Debug.Log("ERROR: Item " + type + " not in inventory!");
+
+		return null;
+
 	}
 
 	// Draw on GUI?
