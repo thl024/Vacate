@@ -105,49 +105,37 @@ public class EventManager {
                         Debug.Log("Vent Clicked");
 
                         // Vent is an openable object and should have the the openable object script; if not TODO!! (throw error)
-                        OpenableObject openableObj = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+                        OpenableObject vent = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
 
-                        if (!openableObj.isOpen) { // If vent is not open
+                        if (!vent.isOpen) { // If vent is not open
 
                             if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
 
                                 if (player.itemHeld.type == ObjectType.Screwdriver) {
-
                                     Debug.Log("Vent Opened");
 
                                     // TODO!!
                                     // Change vent sprite
-
+                                    
                                     // Open vent
-                                    openableObj.isOpen = true;
+                                    vent.isOpen = true;
 
                                     // Remove screwdriver from player inventory
                                     player.RemoveItem(player.itemHeld);
-
                                 } else {
-
                                     Debug.Log("Incorrect item used on vent");
-
                                     // TODO -- Popup telling user that he or she is a dumbass using the wrong item
-
                                 }
 
                             } else { // Player is not holding an item
-
                                 Debug.Log("Vent clicked with no item");
-
                                 // TODO -- popup telling user that it needs something to open or something
-
                             }
 
                         } else { // Vent is open
-
                             Debug.Log("Vent opened");
-
                             // If item is in the vent... it should be able to handle itself being clicked
-
                             // DO NOTHING
-
                         }
 
                         break;
@@ -174,6 +162,43 @@ public class EventManager {
 
                     case ObjectType.Trunk:
                         Debug.Log("Trunk Clicked");
+
+                        // Trunk is an openable object and should have the the openable object script; if not TODO!! (throw error)
+                        OpenableObject trunk = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+
+                        if (!trunk.isOpen) {
+
+                            if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
+
+                                if (player.itemHeld.type == ObjectType.TrunkKey) {
+                                    Debug.Log("Trunk Opened");
+
+                                    // TODO!!
+                                    // Change trunk sprite
+                                    
+                                    // Open trunk
+                                    trunk.isOpen = true;
+
+                                    // Remove trunk key from player inventory
+                                    player.RemoveItem(player.itemHeld);
+                                } else {
+                                    Debug.Log("Incorrect item used on trunk");
+                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                }
+
+                            } else { // Player is not holding an item
+                                Debug.Log("Trunk clicked with no item");
+                                // TODO -- popup telling user that it needs something to open or something
+                            }
+
+                        } else { // Vent is open
+                            Debug.Log("Vent opened");
+                            // If item is in the vent... it should be able to handle itself being clicked
+                            // DO NOTHING
+                        }
+
+                        break;
+
                         break;
 
                     case ObjectType.ExitDoor:
