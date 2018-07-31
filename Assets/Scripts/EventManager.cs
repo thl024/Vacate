@@ -11,13 +11,10 @@ public class EventManager {
     public Player player;
 
     public CameraMovement mainCameraMover;
-    UIManager uiManager; 
+     
     #endregion
 
-    void Awake()
-    {
-        uiManager = GameObject.Find("UI").GetComponent<UIManager>();
-    }
+    
 
 
     public EventManager() {
@@ -69,7 +66,7 @@ public class EventManager {
             mainCameraMover.MoveCam(space.camTarget.transform);
 
             //adjust UI
-            
+            UIManager uiManager = GameObject.Find("UI").GetComponent<UIManager>();
             uiManager.DeactivateButtons();
 
             return;

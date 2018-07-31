@@ -23,7 +23,7 @@ public class InteractableObject : MonoBehaviour {
     #region getters
     ObjectType GetObjectType() { return type; }
     string GetDescription() { return description; }
-    Sprite GetObjSprite() { return objSprite;  }
+    public Sprite GetObjSprite() { return objSprite;  }
 
 
 
@@ -37,7 +37,7 @@ public class InteractableObject : MonoBehaviour {
     {
         //get sprite renderer
         objSprite = GetComponent<SpriteRenderer>().sprite;
-        Debug.Log(objSprite);
+        
     }
 
     #endregion
