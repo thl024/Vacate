@@ -97,6 +97,9 @@ public class EventManager {
 
                     case ObjectType.Bed:
                         Debug.Log("Bed Clicked");
+
+                        // Bed itself is uninteresting; nothing happens
+
                         break;
 
                     // EXAMPLE!!!
@@ -105,23 +108,25 @@ public class EventManager {
                         Debug.Log("Vent Clicked");
 
                         // Vent is an openable object and should have the the openable object script; if not TODO!! (throw error)
-                        OpenableObject vent = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+                        LockableObject vent = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
 
-                        if (!vent.isOpen) { // If vent is not open
+                        if (vent.isLocked) {
 
                             if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
 
                                 if (player.itemHeld.type == ObjectType.Screwdriver) {
-                                    Debug.Log("Vent Opened");
+                                    Debug.Log("Vent Unhinged");
 
                                     // TODO!!
-                                    // Change vent sprite
-                                    
-                                    // Open vent
+                                    // Change vent sprite with vent.openSprite
+
+                                    // Unlock vent and open it
+                                    vent.isLocked = false;
                                     vent.isOpen = true;
 
                                     // Remove screwdriver from player inventory
                                     player.RemoveItem(player.itemHeld);
+
                                 } else {
                                     Debug.Log("Incorrect item used on vent");
                                     // TODO -- Popup telling user that he or she is a dumbass using the wrong item
@@ -132,8 +137,8 @@ public class EventManager {
                                 // TODO -- popup telling user that it needs something to open or something
                             }
 
-                        } else { // Vent is open
-                            Debug.Log("Vent opened");
+                        } else { // Vent is already unlocked
+                            Debug.Log("Vent already open and unlocked");
                             // If item is in the vent... it should be able to handle itself being clicked
                             // DO NOTHING
                         }
@@ -142,45 +147,134 @@ public class EventManager {
 
                     case ObjectType.DeskDrawer:
                         Debug.Log("DeskDrawer Clicked");
+
+                        OpenableObject deskDrawer = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+
+                        if (!deskDrawer.isOpen) {
+                            Debug.Log("Drawer opened");
+
+                            deskDrawer.isOpen = true;
+                            // TODO change sprite
+                        } else {
+                            Debug.Log("Drawer closed");
+
+                            deskDrawer.isOpen = false;
+                            // TODO change sprite
+                        }
+
                         break;
 
                     case ObjectType.Computer:
                         Debug.Log("Computer Clicked");
+
+                        // todo
+
                         break;
 
                     case ObjectType.DeskDrawer1:
                         Debug.Log("DeskDrawer1 Clicked");
+
+                        OpenableObject deskDrawer1 = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+
+                        if (!deskDrawer1.isOpen) {
+                            Debug.Log("Drawer1 opened");
+
+                            deskDrawer1.isOpen = true;
+                            // TODO change sprite
+                        } else {
+                            Debug.Log("Drawer1 closed");
+
+                            deskDrawer1.isOpen = false;
+                            // TODO change sprite
+                        }
                         break;
 
                     case ObjectType.DeskDrawer2:
                         Debug.Log("DeskDrawer2 Clicked");
+
+                        OpenableObject deskDrawer2 = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+
+                        if (!deskDrawer2.isOpen) {
+                            Debug.Log("Drawer2 opened");
+
+                            deskDrawer2.isOpen = true;
+                            // TODO change sprite
+                        } else {
+                            Debug.Log("Drawer2 closed");
+
+                            deskDrawer2.isOpen = false;
+                            // TODO change sprite
+                        }
+
                         break;
 
                     case ObjectType.DeskDrawer3:
                         Debug.Log("DeskDrawer3 Clicked");
+
+                        LockableObject deskDrawer3 = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
+
+                        if (deskDrawer3.isLocked) {
+
+                            if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
+
+                                if (player.itemHeld.type == ObjectType.DrawerKey) {
+                                    Debug.Log("Drawer3 unlocked");
+
+                                    // TODO!! Potentially change sprite
+
+                                    // Unlock deskDrawer
+                                    deskDrawer3.isLocked = false;
+
+                                    // Remove drawer key from inventory
+                                    player.RemoveItem(player.itemHeld);
+
+                                } else {
+                                    Debug.Log("Incorrect item used on drawer3");
+                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                }
+
+                            } else { // Player is not holding an item
+                                Debug.Log("Drawer3 clicked with no item");
+                                // TODO -- popup telling user that it needs something to open or something
+                            }
+
+                        } else {
+                            // Normal drawer opening stuff
+                            if (!deskDrawer3.isOpen) {
+                                Debug.Log("Drawer3 opened");
+
+                                deskDrawer3.isOpen = true;
+                                // TODO change sprite
+                            } else {
+                                Debug.Log("Drawer3 closed");
+
+                                deskDrawer3.isOpen = false;
+                                // TODO change sprite
+                            }
+                        }
+
                         break;
 
                     case ObjectType.Trunk:
                         Debug.Log("Trunk Clicked");
 
-                        // Trunk is an openable object and should have the the openable object script; if not TODO!! (throw error)
-                        OpenableObject trunk = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+                        LockableObject trunk = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
 
-                        if (!trunk.isOpen) {
+                        if (trunk.isLocked) {
 
                             if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
 
                                 if (player.itemHeld.type == ObjectType.TrunkKey) {
-                                    Debug.Log("Trunk Opened");
+                                    Debug.Log("Trunk unlocked");
 
-                                    // TODO!!
-                                    // Change trunk sprite
-                                    
-                                    // Open trunk
-                                    trunk.isOpen = true;
+                                    // TODO!! Potentially change sprite
 
-                                    // Remove trunk key from player inventory
+                                    // Unlock trunk
+                                    trunk.isLocked = false;
+
+                                    // Remove trunk key from inventory
                                     player.RemoveItem(player.itemHeld);
+
                                 } else {
                                     Debug.Log("Incorrect item used on trunk");
                                     // TODO -- Popup telling user that he or she is a dumbass using the wrong item
@@ -191,18 +285,37 @@ public class EventManager {
                                 // TODO -- popup telling user that it needs something to open or something
                             }
 
-                        } else { // Vent is open
-                            Debug.Log("Vent opened");
-                            // If item is in the vent... it should be able to handle itself being clicked
-                            // DO NOTHING
-                        }
+                        } else {
+                            // Normal drawer opening stuff
+                            if (!trunk.isOpen) {
+                                Debug.Log("Trunk opened");
 
-                        break;
+                                trunk.isOpen = true;
+                                // TODO change sprite
+                            } else {
+                                Debug.Log("Trunk closed");
+
+                                trunk.isOpen = false;
+                                // TODO change sprite
+                            }
+                        }
 
                         break;
 
                     case ObjectType.ExitDoor:
                         Debug.Log("Exit Door Clicked");
+
+                        LockableObject exitDoor = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
+
+                        if (player.itemHeld.type == ObjectType.KeyCard) {
+                            Debug.Log("Unlocked exit door");
+
+                            // WIN GAME LMAO
+
+                        } else {
+                            Debug.Log("Exit Door clicked (not correct item or no item at all)");
+                        }
+
                         break;
 
                     case ObjectType.Nightstand:
