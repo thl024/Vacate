@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour {
 
     int currentIndex = 0;
 
+    
+
     #endregion
 
     #region functionality
@@ -54,14 +56,14 @@ public class UIManager : MonoBehaviour {
         
     }
 
-    public void SetButtonsActive()
+    public void SetButtonsActive() //reactivates movement buttons; deactivates zoomin Back button
     {
         rightButton.gameObject.SetActive(true);
         leftButton.gameObject.SetActive(true);
         backButton.gameObject.SetActive(false);
     }
 
-    public void DeactivateButtons()
+    public void DeactivateButtons() //deactivates movement buttons; acatvates zoominBack button
     {
         rightButton.gameObject.SetActive(false);
         leftButton.gameObject.SetActive(false);
@@ -71,7 +73,7 @@ public class UIManager : MonoBehaviour {
     public void BackButton()
     {
         mainCam.MoveCam(roomsList[currentIndex]);
-        Debug.Log(roomsList[currentIndex]);
+        //Debug.Log(roomsList[currentIndex]);
         SetButtonsActive();
     }
     #endregion
