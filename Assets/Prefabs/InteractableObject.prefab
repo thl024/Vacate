@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 60450282753159160}
   - component: {fileID: 114657774692533992}
   m_Layer: 0
-  m_Name: InteractableObjectUI
+  m_Name: InteractableObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,8 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   description: Test description
-  canPickUp: 1
-  count: 1
+  canPickUp: 0
 --- !u!212 &212182482353183572
 SpriteRenderer:
   m_ObjectHideFlags: 1

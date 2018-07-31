@@ -13,14 +13,14 @@ public class CameraMovement : MonoBehaviour {
         transform.position = inTarget.position;
     }
 
-
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             MoveCam(Target);
-            Debug.Log(Target + " : " + Target.position.x + ", " + Target.position.y + ", " + Target.position.z);
+            HelperFunctions.printTransform(Target);
         }
-    }
+    }*/
 
 }

@@ -14,6 +14,8 @@ public class InteractableObject : MonoBehaviour {
 	// Pickupable or not
 	public bool canPickUp;
 
+    Sprite objSprite;
+
     // No functionalities for now...
     #endregion
 
@@ -21,6 +23,7 @@ public class InteractableObject : MonoBehaviour {
     #region getters
     ObjectType GetObjectType() { return type; }
     string GetDescription() { return description; }
+    Sprite GetObjSprite() { return objSprite;  }
 
 
 
@@ -30,9 +33,14 @@ public class InteractableObject : MonoBehaviour {
 
     #region functionality
 
-    
+    private void Awake()
+    {
+        //get sprite renderer
+        objSprite = GetComponent<SpriteRenderer>().sprite;
+        Debug.Log(objSprite);
+    }
 
-#endregion 
+    #endregion
 
 }
 

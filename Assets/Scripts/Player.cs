@@ -34,6 +34,7 @@ public class Player {
 		// Object exists, equip item
 		this.isHoldingItem = true;
 		this.itemHeld = obj;
+        //UIUPDATE CODE 
 
 		return true;
 	}
