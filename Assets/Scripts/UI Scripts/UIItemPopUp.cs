@@ -7,7 +7,7 @@ public class UIItemPopUp : MonoBehaviour {
     //takes care of all the UI stuff.  wow.
 
     public Canvas popUp;
-    Image itemImage;
+    Sprite itemImage;
     Text description;
     
 
@@ -16,7 +16,7 @@ public class UIItemPopUp : MonoBehaviour {
         
         description = GameObject.Find("Item Description").GetComponent<Text>();
         popUp.gameObject.SetActive(false);
-        Debug.Log(description);
+        //Debug.Log(description);
     }
 
 

@@ -5,27 +5,30 @@ using UnityEngine.UI;
 
 public class UIInvItem : MonoBehaviour {
 
-    Sprite image;
-    public Sprite testImage;
+    Image image;
+    [SerializeField]
+    int index;
+    
 
     void Awake()
     {
-        image = GetComponent<Image>().sprite;
-        Debug.Log(image);
+        image = GetComponent<Image>();
+        
+        Debug.Log("UIInvItem Awake: " + image);
+
+        
     }
 
-    void SetImage(Sprite inSprite)
+    public void SetImage(Sprite inSprite)
     {
-        image = inSprite;
+        image.sprite = inSprite;
+        Debug.Log("UIINVITEM sprite:" + image);
     }
 
+    public int GetIndex() { return index; }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetImage(testImage);
-        }
-    }
+    
+
+    
 
 }

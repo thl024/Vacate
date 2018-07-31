@@ -6,6 +6,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
 	public List<InteractableObject> items = new List<InteractableObject>();
+    //public UIInvItem[] UIlist;
 
 	public void AddItem(InteractableObject item) {
 		items.Add(item);

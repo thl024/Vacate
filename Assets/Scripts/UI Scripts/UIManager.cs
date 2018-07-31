@@ -17,9 +17,11 @@ public class UIManager : MonoBehaviour {
 
     public Transform[] roomsList = new Transform[4];
 
-    int currentIndex = 0;
+    int roomIndex = 0;
 
-    
+    int invIndex = 0;
+
+    public UIInvItem[] UIInventory;
 
     #endregion
 
@@ -27,33 +29,36 @@ public class UIManager : MonoBehaviour {
     private void Awake()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        currentIndex = startingIndex;
-        mainCam.MoveCam(roomsList[currentIndex]);
+        roomIndex = startingIndex;
+        mainCam.MoveCam(roomsList[roomIndex]);
         backButton.gameObject.SetActive(false);
+
+        foreach (UIInvItem j in UIInventory)
+        {
+            j.gameObject.SetActive(false);
+        }
+
     }
 
         #region movementButtons
 
     public void RightButton()
     {
-        currentIndex += 1;
-        currentIndex = currentIndex % 4;
-        mainCam.MoveCam(roomsList[currentIndex]);
-        Debug.Log(currentIndex);
-        Debug.Log(roomsList[currentIndex]);
+        roomIndex += 1;
+        roomIndex = roomIndex % 4;
+        mainCam.MoveCam(roomsList[roomIndex]); 
     }
 
     public void LeftButton()
     {
         
-        if(currentIndex == 0)
+        if(roomIndex == 0)
         {
-            currentIndex = 4;
+            roomIndex = 4;
         }
-        currentIndex -= 1;
-        currentIndex = currentIndex % 4;
-        mainCam.MoveCam(roomsList[currentIndex]);
-        
+        roomIndex -= 1;
+        roomIndex = roomIndex % 4;
+        mainCam.MoveCam(roomsList[roomIndex]); 
     }
 
     public void SetButtonsActive() //reactivates movement buttons; deactivates zoomin Back button
@@ -72,14 +77,26 @@ public class UIManager : MonoBehaviour {
 
     public void BackButton()
     {
-        mainCam.MoveCam(roomsList[currentIndex]);
+        mainCam.MoveCam(roomsList[roomIndex]);
         //Debug.Log(roomsList[currentIndex]);
         SetButtonsActive();
     }
     #endregion
 
-        #region Inventory UI
-    //nothing yet lol
+    #region Inventory UI
+
+    public void AddItem(Sprite itemImg)
+    {
+        UIInventory[invIndex].SetImage(itemImg);
+        UIInventory[invIndex].gameObject.SetActive(true);
+        invIndex++;
+    }
+
+    public void RemoveItem(int index)
+    {
+
+    }
+
     #endregion 
     #endregion
 }
