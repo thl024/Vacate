@@ -320,18 +320,57 @@ public class EventManager {
 
                     case ObjectType.Nightstand:
                         Debug.Log("NightStand Clicked");
+
+                        // todo
+
                         break;
 
                     case ObjectType.Plant:
                         Debug.Log("Plant Clicked");
+
+                        // todo
+
                         break;
 
                     case ObjectType.Candle:
                         Debug.Log("Candle Clicked");
+
+                        MeltableObject candle = gameObject.GetComponent(typeof(MeltableObject)) as MeltableObject;
+
+                        if (!candle.isMelted) {
+
+                             if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
+
+                                if (player.itemHeld.type == ObjectType.Matches) {
+                                    Debug.Log("Candle melted");
+
+                                    // TODO!! change sprite
+
+                                    // Unlock deskDrawer
+                                    candle.isMelted = true;
+
+                                    // Remove matches from inventory
+                                    player.RemoveItem(player.itemHeld);
+
+                                } else {
+                                    Debug.Log("Incorrect item used on candle");
+                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                }
+
+                            } else { // Player is not holding an item
+                                Debug.Log("Candle clicked with no item");
+                                // TODO -- popup telling user that it needs something to open or something
+                            }
+                            
+                        } else {
+                            Debug.Log("Candle already melted");
+                            // DO NOTHING
+                        }
+
                         break;
 
                     default:
-                        Debug.Log("This shouldn't be happening.");
+                        Debug.Log("No code for item clicked. Ensure that if the item is clickable, its bool for clickable is TRUE");
                         break;
                         
                 }
