@@ -5,5 +5,6 @@ using UnityEngine;
 public class LockableObject : OpenableObject {
 
 	public bool isLocked;
+	public Sprite unlockedSprite;
 
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class OpenableObject : InteractableObject {
 
 	public bool isOpen;
-
-	public Sprite openSprite;
+	public Sprite openedSprite;
 
 }

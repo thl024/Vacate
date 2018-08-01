@@ -5,5 +5,6 @@ using UnityEngine;
 public class MeltableObject : InteractableObject {
 
 	public bool isMelted;
+	public bool meltedSprite;
 
 }
