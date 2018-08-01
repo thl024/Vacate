@@ -98,6 +98,42 @@ public class EventManager {
                 // Object types are enumerated in InteractableScript.cs
                 switch (obj.type) {
 
+                    case ObjectType.TeddyBear:
+
+                        OpenableObject teddy = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+
+                        if (!teddy.isOpen) {
+
+                            if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
+
+                                if (player.itemHeld.type == ObjectType.Scissors) {
+                                    Debug.Log("Teddy RIPPED APART");
+
+                                    // TODO!!
+                                    // Change teddy sprite with teddy.openSprite
+
+                                    // Unlock vent and open it
+                                    teddy.isOpen = true;
+
+                                    // Remove scissors from player inventory
+                                    player.RemoveItem(player.itemHeld);
+
+                                    // FIND ITEM IN TEDDY BEAR? Add USB to scene??
+
+                                } else {
+                                    Debug.Log("Incorrect item used on teddy bear");
+                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                }
+
+                            } else { // Player is not holding an item
+                                Debug.Log("Teddy Bear clicked with no item");
+                                // TODO -- popup telling user that it needs something to open or something
+                            }
+
+                        }
+
+                        break;
+
                     case ObjectType.Bed:
                         Debug.Log("Bed Clicked");
 
