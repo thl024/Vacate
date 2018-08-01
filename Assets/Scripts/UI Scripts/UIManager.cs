@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour {
 
     }
 
-        #region movementButtons
+ #region movementButtons
 
     public void RightButton()
     {
