@@ -54,6 +54,7 @@ public enum ObjectType {
     Scissors, 
     KeyCard, 
     Screwdriver,
+    ComputerPeripherals,
     Bed,
     Vent,
     DeskDrawer,
