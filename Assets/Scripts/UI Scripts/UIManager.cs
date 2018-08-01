@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     #region functionality
-    private void Awake()
+    private void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
         roomIndex = startingIndex;
