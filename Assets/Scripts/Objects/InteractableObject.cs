@@ -45,7 +45,7 @@ public class InteractableObject : MonoBehaviour {
 }
 
 public enum ObjectType { 
-    DrawerKey,
+    NightstandKey,
     Matches,
     TrunkKey, 
     Compass, 

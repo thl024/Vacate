@@ -250,47 +250,7 @@ public class EventManager {
                     case ObjectType.DeskDrawer3:
                         Debug.Log("DeskDrawer3 Clicked");
 
-                        LockableObject deskDrawer3 = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
-
-                        if (deskDrawer3.isLocked) {
-
-                            if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
-
-                                if (player.itemHeld.type == ObjectType.DrawerKey) {
-                                    Debug.Log("Drawer3 unlocked");
-
-                                    // TODO!! Potentially change sprite
-
-                                    // Unlock deskDrawer
-                                    deskDrawer3.isLocked = false;
-
-                                    // Remove drawer key from inventory
-                                    player.RemoveItem(player.itemHeld);
-
-                                } else {
-                                    Debug.Log("Incorrect item used on drawer3");
-                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
-                                }
-
-                            } else { // Player is not holding an item
-                                Debug.Log("Drawer3 clicked with no item");
-                                // TODO -- popup telling user that it needs something to open or something
-                            }
-
-                        } else {
-                            // Normal drawer opening stuff
-                            if (!deskDrawer3.isOpen) {
-                                Debug.Log("Drawer3 opened");
-
-                                deskDrawer3.isOpen = true;
-                                // TODO change sprite
-                            } else {
-                                Debug.Log("Drawer3 closed");
-
-                                deskDrawer3.isOpen = false;
-                                // TODO change sprite
-                            }
-                        }
+                        // TODO --- lock on the deskdrawer itself
 
                         break;
 
@@ -360,14 +320,54 @@ public class EventManager {
                     case ObjectType.Nightstand:
                         Debug.Log("NightStand Clicked");
 
-                        // todo
+                        LockableObject nightstand = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
+
+                        if (nightstand.isLocked) {
+
+                            if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
+
+                                if (player.itemHeld.type == ObjectType.NightstandKey) {
+                                    Debug.Log("Nightstand unlocked");
+
+                                    // TODO!! Potentially change sprite
+
+                                    // Unlock nightstand
+                                    nightstand.isLocked = false;
+
+                                    // Remove nightstand key from inventory
+                                    player.RemoveItem(player.itemHeld);
+
+                                } else {
+                                    Debug.Log("Incorrect item used on nightstand");
+                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                }
+
+                            } else { // Player is not holding an item
+                                Debug.Log("Nightstand clicked with no item");
+                                // TODO -- popup telling user that it needs something to open or something
+                            }
+
+                        } else {
+                            // Normal nightstand opening stuff
+                            if (!nightstand.isOpen) {
+                                Debug.Log("Drawer3 opened");
+
+                                nightstand.isOpen = true;
+                                // TODO change sprite
+                            } else {
+                                Debug.Log("Drawer3 closed");
+
+                                nightstand.isOpen = false;
+                                // TODO change sprite
+                            }
+                        }
 
                         break;
 
                     case ObjectType.Plant:
                         Debug.Log("Plant Clicked");
 
-                        // todo
+                        // TODO
 
                         break;
 
