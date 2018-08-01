@@ -24,6 +24,18 @@ public class Inventory : MonoBehaviour {
 		return false;
 	}
 
+	public bool HasItem(ObjectType type) {
+
+		// Potential TODO: override == in InteractableObject
+		foreach (InteractableObject invItem in items) {
+			if (invItem.type == type) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public bool RemoveItem(InteractableObject item) {
 		var ind = -1;
 
@@ -40,6 +52,25 @@ public class Inventory : MonoBehaviour {
 		}
 
 		Debug.Log("ERROR: Item " + item.type + " not in inventory!");
+		return false;
+	}
+
+	public bool RemoveItem(ObjectType type) {
+		var ind = -1;
+
+		for (var i = 0; i < items.Count; i++) {
+			if (items[i].type == type) {
+				ind = i;
+				break;
+			}
+		}
+
+		if (ind != -1) {
+			items.RemoveAt(ind);
+			return true;
+		}
+
+		Debug.Log("ERROR: Item " + type + " not in inventory!");
 		return false;
 	}
 

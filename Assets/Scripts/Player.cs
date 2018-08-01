@@ -103,4 +103,17 @@ public class Player {
 		Debug.Log("Player failed to remove " + obj.type + " from inventory.");
 		return false;
 	}
+
+	// Removes an item (of type) from the player's inventory
+	public bool RemoveItem(ObjectType objectType) {
+		bool result = inventory.RemoveItem(objectType);
+
+		if (result) {
+			Debug.Log("Player successfully removed " + objectType + " from inventory.");
+			return true;
+		}
+
+		Debug.Log("Player failed to remove " + objectType + " from inventory.");
+		return false;
+	}
 }
