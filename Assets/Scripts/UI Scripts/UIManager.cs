@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour {
 
     int roomIndex = 0;
 
-    int invIndex = 0;
+   // int invIndex = 0;
 
     public UIInvItem[] UIInventory;
 
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour {
 
     }
 
- #region movementButtons
+    #region movementButtons
 
     public void RightButton()
     {
@@ -87,15 +87,42 @@ public class UIManager : MonoBehaviour {
 
     public void AddItem(Sprite itemImg)
     {
+        int invIndex = FindEmptyInvIndex();
+        //Debug.Log("add item index: " + invIndex);
+
         UIInventory[invIndex].SetImage(itemImg);
         UIInventory[invIndex].gameObject.SetActive(true);
-        invIndex++;
+        UIInventory[invIndex].IsEmpty = false;
+        
     }
 
     public void RemoveItem(int index)
     {
-
+        UIInventory[index].gameObject.SetActive(false);
+        UIInventory[index].IsEmpty = true;
     }
+
+    int FindEmptyInvIndex()//finds next empty index
+    {
+        int invIndex = 0;
+        foreach (UIInvItem item in UIInventory)
+        {
+            if (UIInventory[invIndex].IsEmpty)
+            {
+                break;
+            }
+            invIndex++;
+        }
+
+        return invIndex;
+    }
+
+    public UIInvItem GetItemAtIndex(int i)
+    {
+        return UIInventory[i];
+    }
+
+
 
     #endregion 
     #endregion

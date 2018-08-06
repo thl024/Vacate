@@ -16,7 +16,6 @@ public class ComputerObject : InteractableObject {
 
 
     //Properties.    use like variables: ( Computer.IsOn = true. )
-    [SerializeField]
     public bool IsON { get; set; }
     public bool HasPeripherals { get; set; }
     public bool IsPWCorrect { get; set; }
