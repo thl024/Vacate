@@ -12,13 +12,10 @@ public class Player {
 	public bool isHoldingItem;
 	public InteractableObject itemHeld;
 
-    UIManager uiMan;
-
 	// Use this for initialization
 	public Player() {
 		inventory = GameObject.Find("UI").GetComponent<Inventory>();
 		isHoldingItem = false;
-        uiMan = GameObject.Find("UI").GetComponent<UIManager>();
     }
 
 	// Equips an item
@@ -77,7 +74,6 @@ public class Player {
 		if (obj.canPickUp) {
 			inventory.AddItem(obj);
 			Debug.Log("Player successfully picked up: " + obj.type);
-            uiMan.AddItem(obj.GetObjSprite());
 			return true;
 		}
 

@@ -5,11 +5,30 @@ using UnityEngine;
 // May need to inherit from script or something to render items updates on UI
 public class Inventory : MonoBehaviour {
 
+	// Could be combined later maybe
 	public List<InteractableObject> items = new List<InteractableObject>();
-    //public UIInvItem[] UIlist;
+	public UIInvItem[] UIInventory;
+
+	private void Start()
+    {
+        foreach (UIInvItem j in UIInventory)
+        {
+            j.gameObject.SetActive(false);
+        }
+
+    }
 
 	public void AddItem(InteractableObject item) {
+		// Logic
 		items.Add(item);
+
+		// UI stuff
+		int invIndex = FindEmptyInvIndex();
+        //Debug.Log("add item index: " + invIndex);
+
+        UIInventory[invIndex].SetImage(item.objSprite);
+        UIInventory[invIndex].gameObject.SetActive(true);
+        UIInventory[invIndex].IsEmpty = false;
 	}
 
 	public bool HasItem(InteractableObject item) {
@@ -48,6 +67,11 @@ public class Inventory : MonoBehaviour {
 
 		if (ind != -1) {
 			items.RemoveAt(ind);
+
+			// TODO Index may be different?
+			// UIInventory[index].gameObject.SetActive(false);
+			// UIInventory[index].IsEmpty = true;
+
 			return true;
 		}
 
@@ -67,6 +91,11 @@ public class Inventory : MonoBehaviour {
 
 		if (ind != -1) {
 			items.RemoveAt(ind);
+
+			// TODO Index may be different?
+			// UIInventory[index].gameObject.SetActive(false);
+			// UIInventory[index].IsEmpty = true;
+
 			return true;
 		}
 
@@ -90,8 +119,24 @@ public class Inventory : MonoBehaviour {
 
 	}
 
-	// Draw on GUI?
-	void OnGUI() {
-    	// GUI.Label( new Rect(...), text );
- 	}
+	int FindEmptyInvIndex()//finds next empty index
+    {
+        int invIndex = 0;
+        foreach (UIInvItem item in UIInventory)
+        {
+            if (UIInventory[invIndex].IsEmpty)
+            {
+                break;
+            }
+            invIndex++;
+        }
+
+        Debug.Log(invIndex);
+        return invIndex;
+    }
+
+    public UIInvItem GetItemAtIndex(int i)
+    {
+        return UIInventory[i];
+    }
 }

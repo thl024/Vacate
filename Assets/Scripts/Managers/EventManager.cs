@@ -9,20 +9,12 @@ public class EventManager {
 
     // Keep track of the player 
     public Player player;
-
-    public CameraMovement mainCameraMover;
      
     #endregion
-
-    
-
 
     public EventManager() {
         // Keeps track of the player
         player = new Player();
-
-        // Get camera script to change cam when necessary
-        mainCameraMover = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
     }
 
     public void PerformEquip(ObjectType type) {
@@ -53,24 +45,6 @@ public class EventManager {
     // Determines the event upon gameobject selection
     public void PerformEvent(GameObject gameObject) {
         Debug.Log("Event Manager Logic");
-
-        // Check if object is a zoomable space
-        ZoomSpace space = gameObject.GetComponent(typeof(ZoomSpace)) as ZoomSpace;
-        if (space != null) {
-
-            Debug.Log("Zoom space clicked");
-
-            // Move main camera to the space
-
-            HelperFunctions.printTransform(space.camTarget.transform);
-            mainCameraMover.MoveCam(space.camTarget.transform);
-
-            //adjust UI
-            UIManager uiManager = GameObject.Find("UI").GetComponent<UIManager>();
-            uiManager.DeactivateButtons();
-
-            return;
-        }
 
         // Check if object is interactable
         InteractableObject obj = gameObject.GetComponent(typeof(InteractableObject)) as InteractableObject;

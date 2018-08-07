@@ -14,7 +14,8 @@ public class InteractableObject : MonoBehaviour {
 	// Pickupable or not
 	public bool canPickUp;
 
-    Sprite objSprite;
+    // Default object sprite
+    public Sprite objSprite;
 
     // No functionalities for now...
     #endregion
