@@ -4694,7 +4694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 856534238}
+      - m_Target: {fileID: 1490675344}
         m_MethodName: LeftButton
         m_Mode: 1
         m_Arguments:
@@ -6371,7 +6371,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 856534237}
-  - component: {fileID: 856534238}
   - component: {fileID: 856534239}
   m_Layer: 0
   m_Name: UI
@@ -6379,7 +6378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &856534237
 Transform:
   m_ObjectHideFlags: 0
@@ -6394,34 +6393,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &856534238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 856534236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7731a7f09b6e864489fea23bbfead6ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightButton: {fileID: 1314706937}
-  leftButton: {fileID: 700749195}
-  backButton: {fileID: 1360754603}
-  startingIndex: 1
-  roomsList:
-  - {fileID: 1400251449}
-  - {fileID: 1588199567}
-  - {fileID: 1961642791}
-  - {fileID: 248850222}
-  UIInventory:
-  - {fileID: 901619843}
-  - {fileID: 1909929024}
-  - {fileID: 1779022626}
-  - {fileID: 975628952}
-  - {fileID: 1251688757}
-  - {fileID: 694628117}
-  - {fileID: 1859425585}
 --- !u!114 &856534239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6434,6 +6405,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  UIInventory:
+  - {fileID: 901619843}
+  - {fileID: 1909929024}
+  - {fileID: 1779022626}
+  - {fileID: 975628952}
+  - {fileID: 1251688757}
+  - {fileID: 694628117}
+  - {fileID: 1859425585}
 --- !u!1001 &857657314
 Prefab:
   m_ObjectHideFlags: 0
@@ -7654,7 +7633,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 856534238}
+      - m_Target: {fileID: 1490675344}
         m_MethodName: RightButton
         m_Mode: 1
         m_Arguments:
@@ -7851,7 +7830,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 856534238}
+      - m_Target: {fileID: 1490675344}
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
@@ -8126,13 +8105,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1490675342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a241da64296c748339b34987805fee1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 01fb99a16a9514a0fac863c76d6bf497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1776986107808748, guid: 5aa5558d44cf84fa3bc2596fc9a85276,
-    type: 2}
-  soundManager: {fileID: 1170957811223634, guid: f0a597b531395456692bfdc55dd57c0c,
-    type: 2}
+  mainCameraMover: {fileID: 1490675343}
+  rightButton: {fileID: 1314706937}
+  leftButton: {fileID: 700749195}
+  backButton: {fileID: 1360754603}
+  roomsList:
+  - {fileID: 1400251449}
+  - {fileID: 1588199567}
+  - {fileID: 1961642791}
+  - {fileID: 248850222}
 --- !u!81 &1490675345
 AudioListener:
   m_ObjectHideFlags: 0
