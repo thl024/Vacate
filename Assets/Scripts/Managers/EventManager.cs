@@ -121,24 +121,31 @@ public class EventManager {
                         Debug.Log("Vent Clicked");
 
                         // Vent is an openable object and should have the the openable object script; if not TODO!! (throw error)
-                        LockableObject vent = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
+                        OpenableObject vent = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
 
-                        if (vent.isLocked) {
+                        if (!vent.isOpen) {
 
                             if (!ReferenceEquals( player.itemHeld, null )) { // Player is holding an item
 
                                 if (player.itemHeld.type == ObjectType.Screwdriver) {
                                     Debug.Log("Vent Unhinged");
 
-                                    // TODO!!
-                                    // Change vent sprite with vent.openSprite
+                                    // Change vent sprite
+                                    vent.ChangeSprite(vent.openedSprite);
 
                                     // Unlock vent and open it
-                                    vent.isLocked = false;
                                     vent.isOpen = true;
 
                                     // Remove screwdriver from player inventory
                                     player.RemoveItem(player.itemHeld);
+
+                                    // Make matches visible
+                                    GameObject matches = ObjectDB.Instance.GetObject(ObjectType.Matches);
+                                    if (matches == null) {
+                                        Debug.Log("Error; matches not on scene");
+                                        return;
+                                    }
+                                    matches.SetActive(true);
 
                                 } else {
                                     Debug.Log("Incorrect item used on vent");
@@ -151,7 +158,7 @@ public class EventManager {
                             }
 
                         } else { // Vent is already unlocked
-                            Debug.Log("Vent already open and unlocked");
+                            Debug.Log("Vent already open");
                             // If item is in the vent... it should be able to handle itself being clicked
                             // DO NOTHING
                         }

@@ -20,11 +20,18 @@ public class ObjectDB {
 	   }
 	}
 
-	public void RegisterItem(ObjectType type, GameObject go) {
+	public void RegisterObject(ObjectType type, GameObject go) {
 		db.Add(type, go);
 	}
 
-	public bool UnregisterItem(ObjectType type) {
+	public GameObject GetObject(ObjectType type) {
+		if (db.ContainsKey(type)) {
+			return db[type];
+		}
+		return null;
+	}
+
+	public bool UnregisterObject(ObjectType type) {
 		return db.Remove(type);
 	}
 

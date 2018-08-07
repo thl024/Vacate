@@ -17,6 +17,9 @@ public class InteractableObject : MonoBehaviour {
     // Default object sprite
     public Sprite objSprite;
 
+    // Determines whether gameobject is enabled or disabled at start
+    public bool initiallyActive;
+
     // No functionalities for now...
     #endregion
 
@@ -30,21 +33,37 @@ public class InteractableObject : MonoBehaviour {
 
     #region functionality
 
-    private void Awake()
-    {
+    private void Start() {
 
         // Register gameobject to item database
-        ObjectDB.Instance.RegisterItem(this.type, gameObject);
+        ObjectDB.Instance.RegisterObject(this.type, gameObject);
+
+        GameObject o = ObjectDB.Instance.GetObject(this.type);
+        Debug.Log(o);
+
+        gameObject.SetActive(initiallyActive);
+
+    }
+
+    private void Awake()
+    {
 
         // Set object sprite equal to the sprite renderer's
         objSprite = GetComponent<SpriteRenderer>().sprite;
         
     }
 
-    private void onDestroy() {
+    private void OnDestroy() {
 
         // Unregister gameobject from item database
-        ObjectDB.Instance.UnregisterItem(this.type);
+        ObjectDB.Instance.UnregisterObject(this.type);
+
+    }
+
+    public void ChangeSprite(Sprite sprite) {
+
+        // TODO make more specific for openable, burnable, etc.
+        GetComponent<SpriteRenderer>().sprite = sprite;
 
     }
 
