@@ -25,10 +25,6 @@ public class InteractableObject : MonoBehaviour {
     ObjectType GetObjectType() { return type; }
     string GetDescription() { return description; }
     public Sprite GetObjSprite() { return objSprite;  }
-
-
-
-
     #endregion
 
 
@@ -36,9 +32,20 @@ public class InteractableObject : MonoBehaviour {
 
     private void Awake()
     {
-        //get sprite renderer
+
+        // Register gameobject to item database
+        ObjectDB.Instance.RegisterItem(this.type, gameObject);
+
+        // Set object sprite equal to the sprite renderer's
         objSprite = GetComponent<SpriteRenderer>().sprite;
         
+    }
+
+    private void onDestroy() {
+
+        // Unregister gameobject from item database
+        ObjectDB.Instance.UnregisterItem(this.type);
+
     }
 
     #endregion
