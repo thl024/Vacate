@@ -18,7 +18,7 @@ public class InteractableObject : MonoBehaviour {
     public Sprite objSprite;
 
     // Determines whether gameobject is enabled or disabled at start
-    public bool initiallyActive;
+    public bool initiallyActive = true;
 
     // No functionalities for now...
     #endregion
@@ -50,6 +50,7 @@ public class InteractableObject : MonoBehaviour {
 
         // Set object sprite equal to the sprite renderer's
         objSprite = GetComponent<SpriteRenderer>().sprite;
+        //initiallyActive = true;
         
     }
 
@@ -82,16 +83,19 @@ public enum ObjectType {
     KeyCard, 
     Screwdriver,
     ComputerPeripherals,
-    Bed,
+    BedCovers,
+    Pillow,
     Vent,
+    TopDeskDrawer,
+    BotDeskDrawer,
     DeskDrawer,
     Computer,
-    DeskDrawer1,
-    DeskDrawer2,
-    DeskDrawer3,
+    TopDresserDrawer,
+    MidDresserDrawer,
+    BotDresserDrawer,
     Trunk,
     ExitDoor,
-    Nightstand,
+    NightstandDrawer,
     Plant,
     Candle
 };

@@ -72,6 +72,7 @@ public class EventManager {
                 // Object types are enumerated in InteractableScript.cs
                 switch (obj.type) {
 
+                    #region TeddyBear
                     case ObjectType.TeddyBear:
 
                         OpenableObject teddy = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
@@ -107,14 +108,15 @@ public class EventManager {
                         }
 
                         break;
+                    #endregion
 
-                    case ObjectType.Bed:
-                        Debug.Log("Bed Clicked");
+                    case ObjectType.BedCovers:
+                        Debug.Log("BedCovers Clicked");
 
                         // Bed itself is uninteresting; nothing happens
 
                         break;
-
+                    #region Vent
                     // EXAMPLE!!!
                     case ObjectType.Vent:
 
@@ -164,9 +166,11 @@ public class EventManager {
                         }
 
                         break;
+                    #endregion
 
-                    case ObjectType.DeskDrawer:
-                        Debug.Log("DeskDrawer Clicked");
+                    #region DeskDrawers
+                    case ObjectType.TopDeskDrawer:
+                        Debug.Log("TopDeskDrawer Clicked");
 
                         OpenableObject deskDrawer = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
 
@@ -184,56 +188,62 @@ public class EventManager {
 
                         break;
 
+                    case ObjectType.BotDeskDrawer:
+                        Debug.Log("BottomDresserDrawer3 Clicked");
+
+                        // TODO --- lock on the deskdrawer itself
+
+                        break;
+                    #endregion
+
+
                     case ObjectType.Computer:
                         Debug.Log("Computer Clicked");
 
                         // todo
 
                         break;
+                    #region Dresser Drawers
 
-                    case ObjectType.DeskDrawer1:
-                        Debug.Log("DeskDrawer1 Clicked");
+                    case ObjectType.TopDresserDrawer:
+                        Debug.Log("topDresserDrawer Clicked");
 
-                        OpenableObject deskDrawer1 = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+                        OpenableObject topDressDrawer = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
 
-                        if (!deskDrawer1.isOpen) {
+                        if (!topDressDrawer.isOpen) {
                             Debug.Log("Drawer1 opened");
 
-                            deskDrawer1.isOpen = true;
+                            topDressDrawer.isOpen = true;
                             // TODO change sprite
                         } else {
                             Debug.Log("Drawer1 closed");
 
-                            deskDrawer1.isOpen = false;
+                            topDressDrawer.isOpen = false;
                             // TODO change sprite
                         }
                         break;
 
-                    case ObjectType.DeskDrawer2:
-                        Debug.Log("DeskDrawer2 Clicked");
+                    case ObjectType.MidDresserDrawer:
+                        Debug.Log("midDressDrawer Clicked");
 
-                        OpenableObject deskDrawer2 = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
+                        OpenableObject midDressDrawer = gameObject.GetComponent(typeof(OpenableObject)) as OpenableObject;
 
-                        if (!deskDrawer2.isOpen) {
+                        if (!midDressDrawer.isOpen) {
                             Debug.Log("Drawer2 opened");
 
-                            deskDrawer2.isOpen = true;
+                            midDressDrawer.isOpen = true;
                             // TODO change sprite
                         } else {
                             Debug.Log("Drawer2 closed");
 
-                            deskDrawer2.isOpen = false;
+                            midDressDrawer.isOpen = false;
                             // TODO change sprite
                         }
 
                         break;
+                    #endregion
 
-                    case ObjectType.DeskDrawer3:
-                        Debug.Log("DeskDrawer3 Clicked");
-
-                        // TODO --- lock on the deskdrawer itself
-
-                        break;
+                    
 
                     case ObjectType.Trunk:
                         Debug.Log("Trunk Clicked");
@@ -298,7 +308,7 @@ public class EventManager {
 
                         break;
 
-                    case ObjectType.Nightstand:
+                    case ObjectType.NightstandDrawer:
                         Debug.Log("NightStand Clicked");
 
                         LockableObject nightstand = gameObject.GetComponent(typeof(LockableObject)) as LockableObject;
