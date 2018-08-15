@@ -29,9 +29,7 @@ public class UIItemPopUp : MonoBehaviour {
 
     public void ItemInteracted(int index) //replace with OBJECT class and extract data
     {
-        /*
-         getting null reference when trying to reference uimanager uiinventory
-         */
+        Debug.Log("UIpop index: " +index);
         Debug.Log("UIManager in UI Item PopUP" + uiMan);
         popUp.gameObject.SetActive(true);
         Debug.Log(uiMan.GetItemAtIndex(index));

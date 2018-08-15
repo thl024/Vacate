@@ -39,7 +39,7 @@ public class InteractableObject : MonoBehaviour {
         ObjectDB.Instance.RegisterObject(this.type, gameObject);
 
         GameObject o = ObjectDB.Instance.GetObject(this.type);
-        Debug.Log(o);
+        //Debug.Log(o);
 
         gameObject.SetActive(initiallyActive);
 
