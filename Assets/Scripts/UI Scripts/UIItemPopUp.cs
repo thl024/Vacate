@@ -10,6 +10,7 @@ public class UIItemPopUp : MonoBehaviour {
     Sprite itemImage;
     //Text description;
     UIManager uiMan;
+    Inventory inv;
     
 
     private void Awake()
@@ -18,22 +19,29 @@ public class UIItemPopUp : MonoBehaviour {
         //description = GameObject.Find("Item Description").GetComponent<Text>();
         
         itemImage = popUp.transform.Find("Pop Up BG/Item Image").GetComponent<Image>().sprite;
-        popUp.gameObject.SetActive(false);
+        Debug.Log("uipopup Image: " + itemImage);
+        
+        inv = GameObject.Find("UI").GetComponent<Inventory>();
+        // Debug.Log("UI POP UP INV:" + inv + " in Awake");
+
+        popUp.gameObject.SetActive(false); 
     }
 
     private void Start()
     {
-        uiMan = GameObject.Find("UI").GetComponent<UIManager>();
+        //uiMan = GameObject.Find("UI").GetComponent<UIManager>();
         
     }
 
     public void ItemInteracted(int index) //replace with OBJECT class and extract data
     {
         Debug.Log("UIpop index: " +index);
-        Debug.Log("UIManager in UI Item PopUP" + uiMan);
+        
         popUp.gameObject.SetActive(true);
-        Debug.Log(uiMan.GetItemAtIndex(index));
-        itemImage = uiMan.UIInventory[index].GetImage();
+
+        Debug.Log("Inv in UI Item PopUP" +inv);
+        Debug.Log(inv.GetItemAtIndex(index));
+        itemImage = inv.UIInventory[index].GetImage();
      
 
     }

@@ -137,6 +137,7 @@ public class Inventory : MonoBehaviour {
 
     public UIInvItem GetItemAtIndex(int i)
     {
+        Debug.Log("Inventory object" + UIInventory[i] + " at " + i);
         return UIInventory[i];
     }
 }

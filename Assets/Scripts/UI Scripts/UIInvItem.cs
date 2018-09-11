@@ -38,6 +38,9 @@ public class UIInvItem : MonoBehaviour {
 
     
 
-    
+    public void EquippedUI()
+    {
+        //TO DO: have the circle behind equipped object in thing
+    }
 
 }
