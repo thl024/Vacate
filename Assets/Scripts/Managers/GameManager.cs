@@ -64,10 +64,14 @@ public class GameManager : MonoBehaviour {
             // Check if raycast is targeted towards another game object
             if (hit.collider != null) {
 
-                Debug.Log(hit.collider.gameObject.name + " clicked");
+                Debug.Log(hit.collider.gameObject + " clicked");
 
                 // Check if object is a zoomable space
-				ZoomSpace space = gameObject.GetComponent(typeof(ZoomSpace)) as ZoomSpace;
+
+                //Debug.Log("Is a zoomspace?" + gameObject.GetComponent<ZoomSpace>());
+                //ZoomSpace space = gameObject.GetComponent(typeof(ZoomSpace)) as ZoomSpace;
+                ZoomSpace space = hit.collider.gameObject.GetComponent<ZoomSpace>();
+                Debug.Log("what is space " + space);
 				if (space != null) {
 
 					Debug.Log("Zoom space clicked");
@@ -78,8 +82,8 @@ public class GameManager : MonoBehaviour {
 					mainCameraMover.MoveCam(space.camTarget.transform);
 
 					//adjust UI
-					UIManager uiManager = GameObject.Find("UI").GetComponent<UIManager>();
-					uiManager.DeactivateButtons();
+					//UIManager uiManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
+					DeactivateButtons();
 
 					return;
 				}
