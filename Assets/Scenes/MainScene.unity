@@ -16645,7 +16645,7 @@ Prefab:
         type: 2}
       propertyPath: camTarget
       value: 
-      objectReference: {fileID: 1896363466}
+      objectReference: {fileID: 1003033202}
     - target: {fileID: 4878916098448536, guid: 660cad61f287d4c3ba3ad6096af15b35, type: 2}
       propertyPath: m_LocalScale.x
       value: 0.7249692
@@ -21399,7 +21399,7 @@ Prefab:
     - target: {fileID: 114657774692533992, guid: 538ee3a2f97714529900192d908b937d,
         type: 2}
       propertyPath: type
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 538ee3a2f97714529900192d908b937d, type: 2}
