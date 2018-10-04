@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
 		// Check for mouse click
         if (Input.GetMouseButtonDown(0)) {
             
-            Debug.Log("Mouse clicked");
+           // Debug.Log("Mouse clicked");
 
             // Obtain mouse position in 3d and convert to 2d coordinates
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
                 //Debug.Log("Is a zoomspace?" + gameObject.GetComponent<ZoomSpace>());
                 //ZoomSpace space = gameObject.GetComponent(typeof(ZoomSpace)) as ZoomSpace;
                 ZoomSpace space = hit.collider.gameObject.GetComponent<ZoomSpace>();
-                Debug.Log("what is space " + space);
+                //Debug.Log("what is space " + space);
 				if (space != null) {
 
 					Debug.Log("Zoom space clicked");
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
                 eventManager.PerformEvent(hit.collider.gameObject);
 
             } else {
-                Debug.Log("Empty click");
+               // Debug.Log("Empty click");
             }
 
         } else if (Input.GetKeyDown(KeyCode.S)) {
