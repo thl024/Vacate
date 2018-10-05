@@ -6,19 +6,23 @@ using UnityEngine.UI;
 public class UIInvItem : MonoBehaviour {
 
     Image image;
+    Image equipUI;
     [SerializeField]
     int index;
 
 
     public bool IsEmpty { get; set; }
+    public bool IsEquipped { get; set; }
 
     void Awake()
     {
-        image = GetComponent<Image>();
-
-        // Debug.Log("UIInvItem Awake: " + image);
+        image = transform.Find("ItemImage").GetComponent<Image>();
+        equipUI = transform.Find("EquippedUI").GetComponent<Image>();
+        Debug.Log("equip UI: " + equipUI);
 
         IsEmpty = true;
+        IsEquipped = true;
+        EquippedUI();
 
         
     }
@@ -40,7 +44,10 @@ public class UIInvItem : MonoBehaviour {
 
     public void EquippedUI()
     {
-        //TO DO: have the circle behind equipped object in thing
+        IsEquipped = !IsEquipped;
+        equipUI.gameObject.SetActive(IsEquipped);
+        Debug.Log("equipping UI" + equipUI);
+
     }
 
 }

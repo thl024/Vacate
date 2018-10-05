@@ -27,12 +27,6 @@ public class UIItemPopUp : MonoBehaviour {
         popUp.gameObject.SetActive(false); 
     }
 
-    private void Start()
-    {
-        //uiMan = GameObject.Find("UI").GetComponent<UIManager>();
-        
-    }
-
     public void ItemInteracted(int index) //replace with OBJECT class and extract data
     {   //the index comes from the onClick(); is manually linked.
 
