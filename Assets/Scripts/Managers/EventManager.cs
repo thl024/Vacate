@@ -110,12 +110,16 @@ public class EventManager {
                         break;
                     #endregion
 
+                    #region BedCovers
                     case ObjectType.BedCovers:
                         Debug.Log("BedCovers Clicked");
 
                         // Bed itself is uninteresting; nothing happens
 
                         break;
+#endregion
+
+
                     #region Vent
                     // EXAMPLE!!!
                     case ObjectType.Vent:
@@ -196,13 +200,15 @@ public class EventManager {
                         break;
                     #endregion
 
-
+                    #region Computer
                     case ObjectType.Computer:
                         Debug.Log("Computer Clicked");
 
                         // todo
 
                         break;
+                    #endregion
+
                     #region Dresser Drawers
 
                     case ObjectType.TopDresserDrawer:
@@ -243,8 +249,8 @@ public class EventManager {
                         break;
                     #endregion
 
-                    
 
+                    #region Trunk
                     case ObjectType.Trunk:
                         Debug.Log("Trunk Clicked");
 
@@ -268,11 +274,13 @@ public class EventManager {
                                 } else {
                                     Debug.Log("Incorrect item used on trunk");
                                     // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                    //play the -didn't work-sound
                                 }
 
                             } else { // Player is not holding an item
                                 Debug.Log("Trunk clicked with no item");
                                 // TODO -- popup telling user that it needs something to open or something
+                                //play the -didn't work-sound
                             }
 
                         } else {
@@ -291,7 +299,9 @@ public class EventManager {
                         }
 
                         break;
+                    #endregion
 
+                    #region Exit Door
                     case ObjectType.ExitDoor:
                         Debug.Log("Exit Door Clicked");
 
@@ -307,7 +317,9 @@ public class EventManager {
                         }
 
                         break;
+                    #endregion
 
+                    #region NightStand Drawer
                     case ObjectType.NightstandDrawer:
                         Debug.Log("NightStand Clicked");
 
@@ -354,14 +366,18 @@ public class EventManager {
                         }
 
                         break;
+                    #endregion
 
+                    #region Plant
                     case ObjectType.Plant:
                         Debug.Log("Plant Clicked");
 
-                        // TODO
+                        // TODO: plant doesn't actually do anything.
 
                         break;
+                    #endregion
 
+                    #region Candle
                     case ObjectType.Candle:
                         Debug.Log("Candle Clicked");
 
@@ -376,7 +392,6 @@ public class EventManager {
 
                                     // TODO!! change sprite
 
-                                    // Unlock deskDrawer
                                     candle.isMelted = true;
 
                                     // Remove matches from inventory
@@ -384,20 +399,22 @@ public class EventManager {
 
                                 } else {
                                     Debug.Log("Incorrect item used on candle");
-                                    // TODO -- Popup telling user that he or she is a dumbass using the wrong item
+                                    // -locked item noise-
                                 }
 
                             } else { // Player is not holding an item
                                 Debug.Log("Candle clicked with no item");
-                                // TODO -- popup telling user that it needs something to open or something
+                                // -locked item noise-
+                              
                             }
-                            
+
                         } else {
                             Debug.Log("Candle already melted");
                             // DO NOTHING
                         }
 
                         break;
+                    #endregion
 
                     default:
                         Debug.Log("No code for item clicked. Ensure that if the item is clickable, its bool for clickable is TRUE");
