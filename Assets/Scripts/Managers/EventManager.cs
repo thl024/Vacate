@@ -137,7 +137,7 @@ public class EventManager {
                                     Debug.Log("Vent Unhinged");
 
                                     // Change vent sprite
-                                    vent.ChangeSprite(vent.openedSprite);
+                                    vent.ChangeSprite(1);
 
                                     // Unlock vent and open it
                                     vent.isOpen = true;

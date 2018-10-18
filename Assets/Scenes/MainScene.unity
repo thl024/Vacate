@@ -13332,6 +13332,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2110857665}
     m_Modifications:
+    - target: {fileID: 114657774692533992, guid: 538ee3a2f97714529900192d908b937d,
+        type: 2}
+      propertyPath: sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 60450282753159160, guid: 538ee3a2f97714529900192d908b937d,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -16422,7 +16427,10 @@ MonoBehaviour:
   type: 12
   description: this is a vent
   canPickUp: 0
-  objSprite: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 7b37ed8b2e12df94c81ea7585048ee09, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   initiallyActive: 1
   isOpen: 0
   openedSprite: {fileID: 21300000, guid: eea3d9584d6f3aa4b844f688485d9122, type: 3}
@@ -20152,6 +20160,16 @@ Prefab:
     - target: {fileID: 1963915819298258, guid: 538ee3a2f97714529900192d908b937d, type: 2}
       propertyPath: m_Name
       value: Matches
+      objectReference: {fileID: 0}
+    - target: {fileID: 60450282753159160, guid: 538ee3a2f97714529900192d908b937d,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 4.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 60450282753159160, guid: 538ee3a2f97714529900192d908b937d,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 5.82
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 538ee3a2f97714529900192d908b937d, type: 2}

@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour {
 		int invIndex = FindEmptyInvIndex();
         //Debug.Log("add item index: " + invIndex);
 
-        UIInventory[invIndex].SetImage(item.objSprite);
+        UIInventory[invIndex].SetImage(item.sprites[0]);
         UIInventory[invIndex].gameObject.SetActive(true);
         UIInventory[invIndex].IsEmpty = false;
 	}

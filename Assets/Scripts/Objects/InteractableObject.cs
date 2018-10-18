@@ -5,17 +5,13 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour {
 
     #region data
-    // Object Type
     public ObjectType type;
-
-	// Object Description
 	public string description;
 
-	// Pickupable or not
 	public bool canPickUp;
 
-    // Default object sprite
-    public Sprite objSprite;
+    // Default object sprite is 1st.
+    public Sprite[] sprites; 
 
     // Determines whether gameobject is enabled or disabled at start
     public bool initiallyActive = true;
@@ -27,7 +23,7 @@ public class InteractableObject : MonoBehaviour {
     #region getters
     ObjectType GetObjectType() { return type; }
     string GetDescription() { return description; }
-    public Sprite GetObjSprite() { return objSprite;  }
+    public Sprite[] Getsprites() { return sprites;  }
     #endregion
 
 
@@ -49,7 +45,7 @@ public class InteractableObject : MonoBehaviour {
     {
 
         // Set object sprite equal to the sprite renderer's
-        objSprite = GetComponent<SpriteRenderer>().sprite;
+        sprites[0] = GetComponent<SpriteRenderer>().sprite;
         //initiallyActive = true;
         
     }
@@ -61,11 +57,28 @@ public class InteractableObject : MonoBehaviour {
 
     }
 
-    public void ChangeSprite(Sprite sprite) {
+    public void ChangeSprite(int i) {
 
         // TODO make more specific for openable, burnable, etc.
-        GetComponent<SpriteRenderer>().sprite = sprite;
+        GetComponent<SpriteRenderer>().sprite = sprites[i];
 
+    }
+
+    public void ChangeSpriteOpacity(float op)
+    {
+        Color temp = GetComponent<SpriteRenderer>().color;
+        temp.a = op;
+        GetComponent<SpriteRenderer>().color = temp;
+    }
+
+    public void Lift(Transform location)
+    {
+       //changes sprite & moves obj to location
+    }
+
+    public void PutitBack()
+    {
+        //puts it back?
     }
 
     #endregion

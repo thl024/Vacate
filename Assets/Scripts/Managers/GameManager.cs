@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour {
                 //Debug.Log("Is a zoomspace?" + gameObject.GetComponent<ZoomSpace>());
                 //ZoomSpace space = gameObject.GetComponent(typeof(ZoomSpace)) as ZoomSpace;
                 ZoomSpace space = hit.collider.gameObject.GetComponent<ZoomSpace>();
-                //Debug.Log("what is space " + space);
 				if (space != null) {
 
 					Debug.Log("Zoom space clicked");
